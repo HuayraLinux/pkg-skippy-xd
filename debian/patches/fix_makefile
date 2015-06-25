@@ -1,0 +1,42 @@
+Description: correccion de makefile
+ Correccion de include de freetype2 y version de skippy se obtiene de 
+ la version del paquete porque no existe aun un release.
+ .
+ skippy-xd (0~git+20150625.397216c-1) unstable; urgency=medium
+ .
+   * Initial release.
+Author: Fernando Toledo <ragnarok@docksud.com.ar>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- skippy-xd-0~git+20150625.397216c.orig/Makefile
++++ skippy-xd-0~git+20150625.397216c/Makefile
+@@ -6,6 +6,8 @@ CC ?= gcc
+ SRCS_RAW = skippy wm dlist mainwin clientwin layout focus config tooltip img img-xlib
+ PACKAGES = x11 xft xrender xcomposite xdamage xfixes
+ 
++CPPFLAGS += -I/usr/include/freetype2
++
+ # === Options ===
+ ifeq "${CFG_NO_XINERAMA}" ""
+ 	CPPFLAGS += -DCFG_XINERAMA
+@@ -46,7 +48,7 @@ INCS = $(shell pkg-config --cflags $(PAC
+ LIBS += -lm $(shell pkg-config --libs $(PACKAGES))
+ 
+ # === Version string ===
+-SKIPPYXD_VERSION ?= git-$(shell git describe --always --dirty)-$(shell git log -1 --date=short --pretty=format:%cd)
++SKIPPYXD_VERSION ?= $(shell dpkg-parsechangelog -SVersion| sed -re 's,.([0-9])+$$,,')
+ CPPFLAGS += -DSKIPPYXD_VERSION="\"${SKIPPYXD_VERSION}\""
+ 
+ # === Recipes ===

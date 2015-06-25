@@ -3,13 +3,13 @@ Maintainer: Fernando Toledo <ragnarok@docksud.com.ar>
 Section: x11
 Priority: optional
 Standards-Version: 3.9.6
-Build-Depends: debhelper (>= 8), xserver-xorg-dev, libxft-dev, libxcomposite-dev,
+Build-Depends: debhelper (>= 9), xserver-xorg-dev, libxft-dev, libxcomposite-dev,
  libxdamage-dev, libxinerama-dev, libjpeg-dev, libgif-dev
 
 Package: skippy-xd
 Architecture: i386 amd64
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: A full-screen Exposé-style standalone task switcher for X11.
+Description: Full-screen Exposé-style standalone task switcher for X11.
  Skippy-XD is a full-screen task-switcher for X11. You know that thing
  Mac OS X, Compiz and KWin do where you press a hotkey and suddenly you
  see miniature versions of all your windows at once? Skippy-XD does just

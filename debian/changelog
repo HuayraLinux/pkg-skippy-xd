@@ -1,3 +1,9 @@
+skippy-xd (0~git+20150625.397216c-2) unstable; urgency=medium
+
+  * Build para Huayra4 (stretch)
+
+ -- Fernando Toledo <ragnarok@docksud.com.ar>  Mon, 01 Oct 2018 15:01:59 -0300
+
 skippy-xd (0~git+20150625.397216c-1) unstable; urgency=medium
 
   * Initial release.

@@ -2,8 +2,11 @@ Source: skippy-xd
 Maintainer: Fernando Toledo <ragnarok@docksud.com.ar>
 Section: x11
 Priority: optional
-Standards-Version: 3.9.6
-Build-Depends: debhelper (>= 9), xserver-xorg-dev, libxft-dev, libxcomposite-dev,
+Standards-Version: 4.3.0
+Homepage: https://github.com/HuayraLinux/pkg-skippy-xd
+Vcs-Git: https://github.com/HuayraLinux/pkg-skippy-xd.git
+Vcs-Browser: https://github.com/HuayraLinux/pkg-skippy-xd
+Build-Depends: debhelper (>= 10), xserver-xorg-dev, libxft-dev, libxcomposite-dev,
  libxdamage-dev, libxinerama-dev, libjpeg-dev, libgif-dev
 
 Package: skippy-xd

@@ -1,3 +1,9 @@
+skippy-xd (0~git+20200413.b2cf2e2-1) unstable; urgency=medium
+
+  * Nueva version desde https://github.com/dreamcat4/skippy-xd
+
+ -- Fernando Toledo <ragnarok@docksud.com.ar>  Tue, 30 Mar 2021 00:47:05 -0300
+
 skippy-xd (0~git+20150625.397216c-2) unstable; urgency=medium
 
   * Build para Huayra4 (stretch)

@@ -1,2 +1,2 @@
 version=3
-https://github.com/richardgv/skippy-xd/tags .*/(\d[\d\.]+)\.tar\.gz
+https://github.com/dreamcat4/skippy-xd/tags .*/(\d[\d\.]+)\.tar\.gz

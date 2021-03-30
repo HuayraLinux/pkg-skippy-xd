@@ -1,0 +1,37 @@
+.TH SKIPPY-XD 1 "Jun 25, 2015"
+.SH NAME
+skippy-xd \- Full-screen Exposé-style standalone task switcher for X11.
+.SH SYNOPSIS
+.B skippy-xd
+.SH DESCRIPTION
+.B SKIPPY-XD
+is a full-screen task-switcher for X11. You know that thing
+Mac OS X, Compiz and KWin do where you press a hotkey and suddenly you
+see miniature versions of all your windows at once? Skippy-XD does just
+that. It's most commonly known by Mac OS X's name for it - Exposé.
+.PP
+However, sometimes skippy won't activate properly. This can either be 
+because it launches too quickly, and receives the last Return key press 
+event, that was used to launch it by. Or because when bound to a global
+key binding, and when the key is being held down. Then the key repeats 
+and skippy will be activated far too much, causing the daemon to lock up. 
+Because it is getting  many more requests than it can actually handle. 
+Over it's simple FIFO buffer loop.
+.PP
+To try to address those kinds of problems, we now include the wrapper 
+script `skippy-xd-runner`. However it is not an ideal solution and 
+introduces new problems of it's own. Ideally we should prefer to upgrade
+or replace the FIFO queue (file socket) / polling of `read()`. 
+With someting a bit less dumb.
+.PP
+Anyhow, for the time being `skippy-xd-runner` is a useful safeguard. 
+To prevent lockups of your window manager (or whatever your parent process)
+that is activating skippy. Those types of background usage / invokation
+of skippy are discussed in more detail in the next sections.
+.SH SEE ALSO
+https://github.com/HuayraLinux/pkg-skippy-xd
+.PP
+https://github.com/dreamcat4/skippy-xd
+.SH AUTHOR
+Este manual ha sido escrito por Fernando Toledo <ragnarok@docksud.com.ar>, para Huayra
+GNU/Linux (pero puede ser utilizado por otros).
